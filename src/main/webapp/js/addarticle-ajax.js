@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var rootURL = '/DentistryArticles/REST/';
+    var rootURL = '/DentistryArticlesMaven/REST/';
 
     $('#submit').click(function() {
         var title      = $('#title').val();
