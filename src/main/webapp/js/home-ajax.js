@@ -11,7 +11,7 @@ $(document).ready(function() {
                 $('#articles').append('<div id="article">'
                                   + '<h2>' + articles[i].articleTitle + '</h2>'
                                   + '<h3>' + articles[i].articleBrief + '</h3>'
-                                  + '<a href=/REST/Article/id/' + articles[i].articleId + '" >Read Full Article</a>'
+                                  + '<a href=/REST/Article/id/' + articles[i].articleId + '>Read Full Article</a>'
                                   + '</div>');
             }
         }
