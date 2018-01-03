@@ -52,6 +52,19 @@ public class ArticlesPersistence {
         return article;
     }
 
+    public ArticlesEntity getArticleByTitle(String articleTitle) {
+        TypedQuery<ArticlesEntity> query = entityManager
+                .createQuery("select a from ArticlesEntity a where a.articleTitle LIKE '" + articleTitle + "'",
+                        ArticlesEntity.class);
+
+        ArticlesEntity article = query.getSingleResult();
+
+        entityManager.close();
+        entityManagerFactory.close();
+
+        return article;
+    }
+
     public String updateArticleById(int id, ArticlesEntity article) {
         entityManager.getTransaction().begin();
 
