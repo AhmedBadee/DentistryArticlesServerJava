@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    var rootURL = '/DentistryArticlesMaven/REST/';
 
     $('#submit').click(function() {
         var title      = $('#title').val();
@@ -18,7 +17,7 @@ $(document).ready(function() {
                 community_professional : com_pro,
                 image_urls  : image_urls
             }),
-            url : rootURL + 'AddArticle/',
+            url : 'REST/AddArticle',
             success: function(result) {
                 $('#result').html(result);
             }
