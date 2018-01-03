@@ -3,7 +3,6 @@ package API;
 import Entities.ArticlesEntity;
 import Persistance.ArticlesPersistence;
 
-import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
@@ -11,8 +10,12 @@ import java.util.List;
 @Path("/")
 public class REST {
 
-    @Inject
+    // @Inject
     private ArticlesPersistence articles;
+
+    public REST() {
+        articles = new ArticlesPersistence();
+    }
 
     @POST
     @Path("/AddArticle")
@@ -30,21 +33,28 @@ public class REST {
     }
 
     @GET
-    @Path("/Articles/{id}")
+    @Path("/Article/id/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public ArticlesEntity getArticleById(@PathParam("id") int id) {
         return articles.getArticleById(id);
     }
 
+    @GET
+    @Path("/Article/Title/{articleTitle}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ArticlesEntity getArticleByTitle(@PathParam("articleTitle") String articleTitle) {
+        return articles.getArticleByTitle(articleTitle);
+    }
+
     @PUT
-    @Path("/Articles/{id}")
+    @Path("/Article/Edit/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     public String updateArticleById(@PathParam("id") int id, ArticlesEntity article) {
         return articles.updateArticleById(id, article);
     }
 
     @DELETE
-    @Path("/Articles/{id}")
+    @Path("/Article/Delete/{id}")
     public String deleteArticleById(@PathParam("id") int id) {
         return articles.deleteArticleById(id);
     }
