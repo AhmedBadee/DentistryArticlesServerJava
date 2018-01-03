@@ -16,7 +16,7 @@ public class ArticlesEntity {
     private String images_urls;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "articleId")
     public int getArticleId() {
         return articleId;
