@@ -1,19 +1,67 @@
 html {
     width: 100%;
     height: 100%;
+    overflow: auto;
 }
 
 body {
     width: 100%;
     height: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    overflow: auto;
 }
 
 #add_div {
     width: 80%;
-    margin: 20px auto 0; /* top - right & left - bottom */
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    color: #000000;
+    margin-top: 20px;
+    border-radius: 7px;
+    overflow: auto;
 }
 
 #add_form {
     width: 100%;
     margin: 0 auto;
+}
+
+h1 {
+    padding: 10px;
+    text-align: center;
+}
+
+.box {
+    width: 70%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    border: 1px solid #607D8B;
+    padding: 7px;
+    font-size: 1.3em;
+}
+
+input[type="checkbox"] {
+    margin: 0 0 0 140px;
+}
+
+input[type="button"] {
+    width: 40%;
+    font-size: 1.5em;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 5px;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="button"]:hover {
+    background-color: #000000;
+    color: #ffffff;
 }
